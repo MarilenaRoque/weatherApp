@@ -11,15 +11,24 @@
         <div class="left">
             <div class="left-content">
                 <h1>Weather Live &bull;</h1>
-                <form id='city'>
-                    <label for='city'>Search for a city:</label></br>
+                <form id='city-form'>
+                    <label class='city-label' for='city'>Search for a city:</label></br>
                     <input type='text' id='city' name='city'></br>
 
-                    <button id='searcg-btn'> Search </button>
+                    <button id='search-btn'> Search </button>
                 </form>
             </div>
         </div>
         <div class="right">
+            <div>
+                <div class="temp">
+                <span class="temp-number">15°</span>
+                <img src='../src/images/icon-template.png'>
+            </div>
+            <div class="temp-buttons">
+                <button id='celsius' class="button-temp">°C</button><button class="button-temp" id='farenheit'>°F</button>
+            </div>
+            <h3>London</h3>
         </div>
 
       </div>
