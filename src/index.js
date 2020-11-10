@@ -6,5 +6,5 @@ import getData from './weatherData';
 // Testings!
 console.log("I am working perfect splendid!");
 console.log("watch is set!");
-getData('lasdadsjfhasçdfháouhfpaiudsfhp');
+getData('London');
 // Testing!
