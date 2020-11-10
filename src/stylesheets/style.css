@@ -52,6 +52,21 @@ h3{
     font-size: 38px;
 }
 
+.info {
+    width: 50%;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(64, 83, 252, 0.24);
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 25px;
+    margin: auto;
+}
+
+h4{
+    text-align: center;
+    margin: 10px;
+}
+
 h1 {
     text-align: center;
     color: white;
