@@ -6,7 +6,7 @@ const setURL = (location, scale) => `http://api.openweathermap.org/data/2.5/weat
 
 const getData = async (location, scale) => {
   const url = setURL(location, scale);
-  const request = await fetch(url, mode: 'cors');
+  const request = await fetch(url, {mode: 'cors'});
   if (request.status === 200) {
     const data = await request.json();
     const obj = weatherObj(data, scale);
