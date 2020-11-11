@@ -11,8 +11,7 @@ const getData = async (location, scale) => {
         const request = await fetch(url);    
         if (request.status == 200) {
             const data = await request.json();
-            const obj = weatherObj(data);
-            console.log(obj);
+            const obj = weatherObj(data, scale);
             page.displayInfo(obj);
             return obj;
         } else {

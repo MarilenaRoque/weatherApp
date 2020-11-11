@@ -37,13 +37,13 @@ const page = (() => {
         const celsius = document.createElement('input');
         celsius.type = 'button';
         celsius.value = '°C';
-        celsius.id = `celsius-${obj.name}`;
+        celsius.id = `celsius-${obj.city}`;
         buttonsDiv.appendChild(celsius);
 
         const fahrenhiet = document.createElement('input');
         fahrenhiet.type = 'button';
         fahrenhiet.value = '°F';
-        fahrenhiet.id = `fahrenhiet-${obj.name}`;
+        fahrenhiet.id = `fahrenhiet-${obj.city}`;
         buttonsDiv.appendChild(fahrenhiet);
 
         infoDiv.appendChild(buttonsDiv);
