@@ -5,9 +5,14 @@ const setURL = (location, scale) => {
 
 const getData = async (location, scale='metric') => {
         const url = setURL(location, scale);
-        const request = await fetch(url);
-        
-        console.log(request);
+        const request = await fetch(url);    
+        if (request.status == 200) {
+            const data = await request.json();
+            return data;
+        } else {
+            reject(response.status);
+        }
 }
+
 
 export default getData;
