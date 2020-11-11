@@ -9,5 +9,8 @@ document.addEventListener('click', (e) => {
     } else if (e.target && e.target.id.includes('fahrenhiet')) {
         const buttonInfo = e.target.id.split('-');
         dataSubmit(buttonInfo[1], 'imperial');
+    } else if (e.target && e.target.id.includes('celsius')) {
+        const buttonInfo = e.target.id.split('-');
+        dataSubmit(buttonInfo[1], 'metric');
     }
 });
