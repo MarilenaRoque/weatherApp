@@ -78,7 +78,7 @@ const page = (() => {
         infoTable.append(minTempH4);
 
         const maxTempH4 = document.createElement('h4');
-        maxTempH4.innerText = `Min Temperature: ${obj.temp_max}`;
+        maxTempH4.innerText = `Max Temperature: ${obj.temp_max}`;
         infoTable.append(maxTempH4);
 
         infoDiv.append(infoTable)
