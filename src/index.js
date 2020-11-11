@@ -1,10 +1,9 @@
 import './stylesheets/style.css';
-import getInfo from './weatherData';
 import getData from './weatherData';
+import weatherObj from './weatherObject';
 
 
 // Testings!
 console.log("I am working perfect splendid!");
-console.log("watch is set!");
-getData('London');
+const data = getData('London');
 // Testing!
