@@ -22,8 +22,8 @@ const getData = async (location, scale) => {
 let dataSubmit = (city= null, scale = 'metric') => {
     if (city===null) {
         city = document.getElementById('city').value;
-        getData(city, scale);
     }
+    getData(city, scale);
 };
 
 
