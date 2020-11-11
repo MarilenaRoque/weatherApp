@@ -107,3 +107,12 @@ h1 {
     display:flex;
     justify-content: center;
 }
+
+.alert {
+    color: red;
+    font-size: 30px;
+}
+
+.display-none {
+    display: none;
+}

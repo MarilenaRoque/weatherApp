@@ -15,7 +15,7 @@ const getData = async (location, scale) => {
             page.displayInfo(obj);
             return obj;
         } else {
-            reject(response);
+            throw Error(404);
         }
 }
 
@@ -23,7 +23,12 @@ let dataSubmit = (city= null, scale = 'metric') => {
     if (city===null) {
         city = document.getElementById('city').value;
     }
-    getData(city, scale);
+    const obj = getData(city, scale);
+    obj.catch( () => {
+        page.setAlert();
+        return null
+    })
+    
 };
 
 

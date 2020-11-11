@@ -83,8 +83,12 @@ const page = (() => {
 
     }
 
+    const setAlert = () => {
+        document.getElementById('alert').classList.remove('display-none');
+    }
 
-    return { displayInfo };
+
+    return { displayInfo, setAlert };
 
 
 })();
