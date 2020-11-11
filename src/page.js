@@ -1,101 +1,94 @@
 const rightDiv = document.getElementById('right');
 
 const removeAlert = () => {
-    document.getElementById('alert').classList.add('display-none');
-}
+  document.getElementById('alert').classList.add('display-none');
+};
 
 const page = (() => {
+  const displayInfo = (obj) => {
+    removeAlert();
+
+    // reseting COntent
+    rightDiv.innerHTML = '';
+
+    // creating right Div
+    const infoDiv = document.createElement('div');
 
 
-    const displayInfo = (obj) => {
+    // Creating Main Display for Temperature and Icon
+    const divMainInfo = document.createElement('div');
+    divMainInfo.classList.add('temp');
 
-        removeAlert();
+    // Creating Temperature Span
+    const spanTemp = document.createElement('span');
+    spanTemp.classList.add('temp-number');
+    spanTemp.innerText = obj.temp;
+    divMainInfo.appendChild(spanTemp);
 
-        //reseting COntent
-        rightDiv.innerHTML = '';
+    // Creating Icon Image Tag
+    const weatherIcon = document.createElement('img');
+    weatherIcon.classList.add('icon');
+    weatherIcon.src = `http://openweathermap.org/img/wn/${obj.icon}.png`;
+    divMainInfo.appendChild(weatherIcon);
 
-        //creating right Div
-        const infoDiv = document.createElement('div');
+    // Append MainInfoDiv on the Righ Div
+    infoDiv.appendChild(divMainInfo);
 
+    // Creating Div for the Unit Buttons
+    const buttonsDiv = document.createElement('div');
+    buttonsDiv.classList.add('temp-buttons');
 
-        // Creating Main Display for Temperature and Icon
-        const divMainInfo = document.createElement('div');
-        divMainInfo.classList.add('temp');
+    const celsius = document.createElement('input');
+    celsius.type = 'button';
+    celsius.value = '°C';
+    celsius.id = `celsius-${obj.city}`;
+    buttonsDiv.appendChild(celsius);
 
-        //Creating Temperature Span
-        const spanTemp = document.createElement('span');
-        spanTemp.classList.add("temp-number");
-        spanTemp.innerText = obj.temp;
-        divMainInfo.appendChild(spanTemp);
+    const fahrenhiet = document.createElement('input');
+    fahrenhiet.type = 'button';
+    fahrenhiet.value = '°F';
+    fahrenhiet.id = `fahrenhiet-${obj.city}`;
+    buttonsDiv.appendChild(fahrenhiet);
 
-        //Creating Icon Image Tag
-        const weatherIcon = document.createElement('img');
-        weatherIcon.classList.add('icon');
-        weatherIcon.src = `http://openweathermap.org/img/wn/${obj.icon}.png`;
-        divMainInfo.appendChild(weatherIcon);
+    infoDiv.appendChild(buttonsDiv);
 
-        // Append MainInfoDiv on the Righ Div
-        infoDiv.appendChild(divMainInfo);
+    // Creating Header City Name
+    const cityName = document.createElement('h3');
+    cityName.innerText = obj.name;
 
-        // Creating Div for the Unit Buttons
-        const buttonsDiv = document.createElement('div');
-        buttonsDiv.classList.add('temp-buttons');
+    infoDiv.append(cityName);
 
-        const celsius = document.createElement('input');
-        celsius.type = 'button';
-        celsius.value = '°C';
-        celsius.id = `celsius-${obj.city}`;
-        buttonsDiv.appendChild(celsius);
+    // Creating Info Table
+    const infoTable = document.createElement('div');
+    infoTable.classList.add('info');
 
-        const fahrenhiet = document.createElement('input');
-        fahrenhiet.type = 'button';
-        fahrenhiet.value = '°F';
-        fahrenhiet.id = `fahrenhiet-${obj.city}`;
-        buttonsDiv.appendChild(fahrenhiet);
+    const mainH4 = document.createElement('h4');
+    mainH4.innerText = obj.main;
+    infoTable.append(mainH4);
 
-        infoDiv.appendChild(buttonsDiv);
+    const descriptionH4 = document.createElement('h4');
+    descriptionH4.innerText = obj.description;
+    infoTable.append(descriptionH4);
 
-        //Creating Header City Name
-        const cityName = document.createElement('h3');
-        cityName.innerText = obj.name;
+    const minTempH4 = document.createElement('h4');
+    minTempH4.innerText = `Min Temperature: ${obj.tempMin}`;
+    infoTable.append(minTempH4);
 
-        infoDiv.append(cityName);
+    const maxTempH4 = document.createElement('h4');
+    maxTempH4.innerText = `Max Temperature: ${obj.tempMax}`;
+    infoTable.append(maxTempH4);
 
-        //Creating Info Table
-        const infoTable = document.createElement('div');
-        infoTable.classList.add('info');
+    infoDiv.append(infoTable);
 
-        const mainH4 = document.createElement('h4');
-        mainH4.innerText = obj.main;
-        infoTable.append(mainH4);
+    rightDiv.appendChild(infoDiv);
+  };
 
-        const descriptionH4 = document.createElement('h4');
-        descriptionH4.innerText = obj.description;
-        infoTable.append(descriptionH4);
-
-        const minTempH4 = document.createElement('h4');
-        minTempH4.innerText = `Min Temperature: ${obj.temp_min}`;
-        infoTable.append(minTempH4);
-
-        const maxTempH4 = document.createElement('h4');
-        maxTempH4.innerText = `Max Temperature: ${obj.temp_max}`;
-        infoTable.append(maxTempH4);
-
-        infoDiv.append(infoTable)
-        
-        rightDiv.appendChild(infoDiv);
+  const setAlert = () => {
+    document.getElementById('alert').classList.remove('display-none');
+  };
 
 
-    }
-
-    const setAlert = () => {
-        document.getElementById('alert').classList.remove('display-none');
-    }
-
-
-    return { displayInfo, setAlert, removeAlert };
-
-
+  return { displayInfo, setAlert, removeAlert };
 })();
 
 export default page;
