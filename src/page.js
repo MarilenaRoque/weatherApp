@@ -30,6 +30,7 @@ const page = (() => {
 
         //Creating Icon Image Tag
         const weatherIcon = document.createElement('img');
+        weatherIcon.classList.add('icon');
         weatherIcon.src = `http://openweathermap.org/img/wn/${obj.icon}.png`;
         divMainInfo.appendChild(weatherIcon);
 

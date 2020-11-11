@@ -116,3 +116,7 @@ h1 {
 .display-none {
     display: none;
 }
+
+.icon {
+    width: 91px;
+}
