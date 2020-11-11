@@ -1,9 +1,15 @@
 const rightDiv = document.getElementById('right');
 
+const removeAlert = () => {
+    document.getElementById('alert').classList.add('display-none');
+}
+
 const page = (() => {
 
 
     const displayInfo = (obj) => {
+
+        removeAlert();
 
         //reseting COntent
         rightDiv.innerHTML = '';
@@ -79,8 +85,6 @@ const page = (() => {
         rightDiv.appendChild(infoDiv);
 
 
-        console.log(rightDiv);
-
     }
 
     const setAlert = () => {
@@ -88,7 +92,7 @@ const page = (() => {
     }
 
 
-    return { displayInfo, setAlert };
+    return { displayInfo, setAlert, removeAlert };
 
 
 })();
