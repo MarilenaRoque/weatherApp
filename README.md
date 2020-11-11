@@ -7,12 +7,13 @@
 
 ### You can access a Live Demo [HERE]()
 
-![Screenshot]()
+![Screenshot](./src/images/screenshot.png)
 
 ## Features
 
-- User can search for a location
-- User ca see the weather information about that local.
+- User can search for a city
+- User can see the weather information about that local.
+- User can choose between Celsius and Fahrenhiet for the Temperature Unit.
 
 ## Built With
 
