@@ -1,3 +1,5 @@
+// Factor function process the data and return obj with just the useful info
+
 const weatherObj = (data) => {
     const name = `${data.name}, ${data.sys.country}`;
     const description = data.weather[0].description.toUpperCase();

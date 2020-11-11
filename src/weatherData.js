@@ -1,4 +1,5 @@
 import weatherObj from './weatherObject';
+import page from './page';
 
 const APIkey = '4661e46672ff5e9947da7e8a3f45a90a';
 const setURL = (location, scale) => { 
@@ -11,7 +12,8 @@ const getData = async (location, scale) => {
         if (request.status == 200) {
             const data = await request.json();
             const obj = weatherObj(data);
-            console.log(obj)
+            console.log(obj);
+            page.displayInfo(obj);
             return obj;
         } else {
             reject(response);
