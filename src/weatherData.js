@@ -5,18 +5,25 @@ const setURL = (location, scale) => {
     return `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${APIkey}&units=${scale}`
 }
 
-const getData = async (location, scale='metric') => {
+const getData = async (location, scale) => {
         const url = setURL(location, scale);
-        console.log(url)
         const request = await fetch(url);    
         if (request.status == 200) {
             const data = await request.json();
             const obj = weatherObj(data);
+            console.log(obj)
             return obj;
         } else {
             reject(response);
         }
 }
 
+let dataSubmit = (city= null, scale = 'metric') => {
+    if (city===null) {
+        city = document.getElementById('city').value;
+        getData(city, scale);
+    }
+};
 
-export default getData;
+
+export default dataSubmit;
