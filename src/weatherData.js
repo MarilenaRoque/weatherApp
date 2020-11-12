@@ -2,7 +2,7 @@ import weatherObj from './weatherObject';
 import page from './page';
 
 const APIkey = '4661e46672ff5e9947da7e8a3f45a90a';
-const setURL = (location, scale) => `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${APIkey}&units=${scale}`;
+const setURL = (location, scale) => `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${APIkey}&units=${scale}`;
 
 const getData = async (location, scale) => {
   const url = setURL(location, scale);
